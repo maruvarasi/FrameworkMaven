@@ -31,7 +31,7 @@ public class NewTest extends BaseTest{
 	  loginPage.launchURL(getProp("url"));
 	  loginPage.searchtext(getDB("input"));
 	  loginPage.clickSearchBtn();
-	  verificationPage.verifyRetult();
+	  verificationPage.verifyRetult(getDB("expected"));
 	  stopTesting();
 	  
   }

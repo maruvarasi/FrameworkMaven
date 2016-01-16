@@ -29,14 +29,14 @@ public class VerificationPage extends VerificationPageObject {
 		this.driver = driver;
 	}
 
-	public void verifyRetult()  {
+	public void verifyRetult(String expected)  {
 		//BasicConfigurator.configure();
 		//logger.setLevel(Level.INFO);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(results));
-		System.out.println(driver.findElement(results).getText());
+		String actual = driver.findElement(results).getText();
 		//logger.info("Results fetched successfully");
-		Reporter.report("test", "test");
+		Reporter.report(driver, actual, expected);
 	}
 
 	
